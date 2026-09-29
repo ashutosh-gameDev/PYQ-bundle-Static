@@ -1,0 +1,16 @@
+{
+  "product": {
+    "name": "PYQ Bundle",
+    "status": "Coming Soon"
+  },
+  "stats": [
+    { "key": "questions", "value": 2000, "suffix": "+", "label": "PYQs" },
+    { "key": "papers", "value": 50, "suffix": "+", "label": "Previous Year Papers" },
+    { "key": "subjects", "value": 5, "suffix": "+", "label": "Subjects" }
+  ],
+  "early_access": {
+    "enabled": true,
+    "premium_reward": "1 Year Premium FREE"
+  },
+  "exams": ["SSC GD", "SSC CGL", "JEE Main", "NEET", "GATE", "UPSC", "Railway", "Other"]
+}

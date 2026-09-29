@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pyqbundle.com/sitemap.xml
