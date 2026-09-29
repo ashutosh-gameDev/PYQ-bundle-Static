@@ -13,7 +13,7 @@
   /* ---------- Analytics (Google Analytics 4) ----------
      Paste your Measurement ID below (GA → Admin → Data streams → Web).
      Leave empty to disable. Not loaded on localhost, so testing doesn't skew numbers. */
-  const GA_ID = ''; // e.g. 'G-ABC123XYZ9'
+  const GA_ID = 'G-BJ2V7227ES';
 
   const isLocal = /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(location.hostname);
   const analyticsOn = /^G-[A-Z0-9]+$/.test(GA_ID) && !isLocal;
