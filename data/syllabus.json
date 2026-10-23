@@ -1,0 +1,660 @@
+{
+  "ssc-gd-constable": {
+    "name": "SSC GD Constable",
+    "subjects": [
+      {
+        "name": "General Intelligence & Reasoning",
+        "topics": [
+          "Analogy",
+          "Classification",
+          "Series",
+          "Coding-Decoding",
+          "Spatial & Visual Reasoning",
+          "Non-Verbal Reasoning",
+          "Other Reasoning Topics"
+        ]
+      },
+      {
+        "name": "General Knowledge & General Awareness",
+        "topics": [
+          "History",
+          "Geography",
+          "Indian Polity",
+          "Economics",
+          "General Science",
+          "Current Affairs",
+          "Static GK"
+        ]
+      },
+      {
+        "name": "Elementary Mathematics",
+        "topics": [
+          "Number System",
+          "Arithmetic",
+          "Time and Work",
+          "Time, Speed and Distance",
+          "Mensuration",
+          "Basic Mathematical Operations"
+        ]
+      },
+      {
+        "name": "English / Hindi",
+        "topics": [
+          "English Language",
+          "हिंदी भाषा"
+        ]
+      }
+    ]
+  },
+  "ssc-cgl": {
+    "name": "SSC CGL",
+    "subjects": [
+      {
+        "name": "Quantitative Aptitude & Mathematical Abilities",
+        "topics": [
+          "Average",
+          "Number System",
+          "Percentage",
+          "Ratio & Proportion",
+          "Profit Loss & Discount",
+          "Interest",
+          "Time & Work",
+          "Time Speed & Distance",
+          "Mixture & Alligation",
+          "Algebra",
+          "Geometry",
+          "Mensuration",
+          "Trigonometry",
+          "Data Interpretation"
+        ]
+      },
+      {
+        "name": "General Intelligence & Reasoning",
+        "topics": [
+          "Analogy",
+          "Classification",
+          "Series",
+          "Coding-Decoding",
+          "Blood Relations",
+          "Direction & Distance",
+          "Order & Ranking",
+          "Venn Diagrams",
+          "Syllogism",
+          "Logical Reasoning",
+          "Non-Verbal Reasoning"
+        ]
+      },
+      {
+        "name": "English Language & Comprehension",
+        "topics": [
+          "Comprehension",
+          "Vocabulary",
+          "Grammar",
+          "Sentence Correction",
+          "Sentence Structure"
+        ]
+      },
+      {
+        "name": "General Awareness",
+        "topics": [
+          "History",
+          "Geography",
+          "Indian Polity & Constitution",
+          "Economics",
+          "General Science",
+          "Current Affairs",
+          "Static GK"
+        ]
+      },
+      {
+        "name": "Computer Knowledge",
+        "topics": [
+          "Computer Basics",
+          "Windows Operating System",
+          "Microsoft Office",
+          "Internet & Email",
+          "Networking & Cyber Security"
+        ]
+      },
+      {
+        "name": "Statistics - JSO & Statistical Investigator",
+        "topics": [
+          "Probability Distributions",
+          "Sampling Theory",
+          "Statistical Inference",
+          "Analysis of Variance",
+          "Time Series",
+          "Index Numbers",
+          "Collection & Presentation of Data",
+          "Measures of Central Tendency",
+          "Measures of Dispersion",
+          "Moments Skewness & Kurtosis",
+          "Correlation & Regression",
+          "Probability"
+        ]
+      }
+    ]
+  },
+  "rrb-ntpc": {
+    "name": "RRB NTPC",
+    "subjects": [
+      {
+        "name": "General Awareness",
+        "topics": [
+          "Current Affairs",
+          "Indian History",
+          "Indian Geography",
+          "World Geography",
+          "Indian Polity",
+          "Indian Economy",
+          "General Science - Physics",
+          "General Science - Chemistry",
+          "General Science - Biology",
+          "Computer Awareness",
+          "Art and Culture",
+          "Sports",
+          "Indian Railways",
+          "Environment",
+          "Miscellaneous General Knowledge"
+        ]
+      },
+      {
+        "name": "General Intelligence and Reasoning",
+        "topics": [
+          "Analogies",
+          "Number and Alphabet Series",
+          "Coding and Decoding",
+          "Mathematical Operations",
+          "Similarities and Differences",
+          "Blood Relations",
+          "Direction Sense",
+          "Analytical Reasoning",
+          "Syllogism",
+          "Venn Diagrams",
+          "Data Sufficiency",
+          "Statement-Based Reasoning",
+          "Decision Making",
+          "Non-Verbal Reasoning",
+          "Maps and Graph Interpretation"
+        ]
+      },
+      {
+        "name": "Mathematics",
+        "topics": [
+          "Percentage",
+          "Simplification",
+          "Ratio and Proportion",
+          "Profit and Loss",
+          "Simple and Compound Interest",
+          "Time and Work",
+          "Time and Distance",
+          "Mensuration",
+          "Algebra",
+          "Geometry",
+          "Trigonometry",
+          "Number System",
+          "Decimals and Fractions",
+          "Elementary Statistics"
+        ]
+      }
+    ]
+  },
+  "rrb-je": {
+    "name": "RRB JE",
+    "subjects": [
+      {
+        "name": "CBT 1 - General Awareness",
+        "topics": [
+          "Current Affairs",
+          "Indian General Knowledge",
+          "Railway Awareness"
+        ]
+      },
+      {
+        "name": "CBT 1 - General Intelligence and Reasoning",
+        "topics": [
+          "Analytical Reasoning",
+          "Verbal Reasoning"
+        ]
+      },
+      {
+        "name": "CBT 1 - General Science",
+        "topics": [
+          "Biology",
+          "Chemistry",
+          "Physics"
+        ]
+      },
+      {
+        "name": "CBT 1 - Mathematics",
+        "topics": [
+          "Algebra and Geometry",
+          "Arithmetic",
+          "Number System",
+          "Statistics and Miscellaneous"
+        ]
+      },
+      {
+        "name": "CBT 2 - Basics of Computers and Applications",
+        "topics": [
+          "Applications and Networking",
+          "Computer Fundamentals"
+        ]
+      },
+      {
+        "name": "CBT 2 - Civil and Allied Engineering",
+        "topics": [
+          "Building Materials and Construction",
+          "Geotechnical and Transportation",
+          "Structural Engineering",
+          "Surveying",
+          "Water and Environmental Engineering"
+        ]
+      },
+      {
+        "name": "CBT 2 - Electrical and Allied Engineering",
+        "topics": [
+          "Electrical Fundamentals",
+          "Electrical Machines",
+          "Electrical Measurements and Electronics",
+          "Power Systems"
+        ]
+      },
+      {
+        "name": "CBT 2 - Electronics and Allied Engineering",
+        "topics": [
+          "Communication Engineering",
+          "Computer and Communication Fundamentals",
+          "Digital Electronics",
+          "Electronic Components and Materials",
+          "Electronic Devices and Circuits",
+          "Microprocessors and Microcontrollers",
+          "Networks and Measurements"
+        ]
+      },
+      {
+        "name": "CBT 2 - Environment and Pollution Control",
+        "topics": [
+          "Environment",
+          "Pollution Control"
+        ]
+      },
+      {
+        "name": "CBT 2 - General Awareness",
+        "topics": [
+          "General Knowledge"
+        ]
+      },
+      {
+        "name": "CBT 2 - Mechanical and Allied Engineering",
+        "topics": [
+          "Engineering Mechanics",
+          "Manufacturing and Machines",
+          "Strength of Materials",
+          "Thermal Engineering"
+        ]
+      },
+      {
+        "name": "CBT 2 - Physics and Chemistry",
+        "topics": [
+          "Chemistry",
+          "Physics"
+        ]
+      }
+    ]
+  },
+  "jee-mains": {
+    "name": "JEE Mains",
+    "subjects": [
+      {
+        "name": "Physics",
+        "topics": [
+          "Kinematics",
+          "Alternating Current",
+          "Atoms and Nuclei",
+          "Current Electricity",
+          "Dual Nature of Matter and Radiation",
+          "Electrostatics",
+          "Gravitation",
+          "Laws of Motion",
+          "Magnetism and Electromagnetic Induction",
+          "Oscillations and Waves",
+          "Properties of Solids and Fluids",
+          "Ray and Wave Optics",
+          "Rotational Motion",
+          "Semiconductor Electronics",
+          "Thermodynamics",
+          "Units, Dimensions and Measurement",
+          "Work, Energy and Power"
+        ]
+      },
+      {
+        "name": "Chemistry",
+        "topics": [
+          "Alcohols, Phenols and Ethers",
+          "Aldehydes, Ketones and Carboxylic Acids",
+          "Amines",
+          "Biomolecules",
+          "Chemical Bonding and Molecular Structure",
+          "Chemical Kinetics",
+          "Classification of Elements and Periodicity",
+          "Coordination Compounds",
+          "Equilibrium",
+          "General Organic Chemistry",
+          "Haloalkanes and Haloarenes",
+          "Hydrocarbons",
+          "Hydrogen and s-Block Elements",
+          "Metallurgy",
+          "Practical and Qualitative Analysis",
+          "Redox Reactions and Electrochemistry",
+          "Solutions",
+          "Some Basic Concepts of Chemistry",
+          "Structure of Atom",
+          "Thermodynamics",
+          "d and f Block Elements",
+          "p-Block Elements"
+        ]
+      },
+      {
+        "name": "Mathematics",
+        "topics": [
+          "Area Under Curves",
+          "Binomial Theorem",
+          "Circles",
+          "Complex Numbers and Quadratic Equations",
+          "Conic Sections",
+          "Differential Equations",
+          "Differentiation and Applications",
+          "Integral Calculus",
+          "Limits, Continuity and Differentiability",
+          "Matrices and Determinants",
+          "Permutations and Combinations",
+          "Probability",
+          "Sequences and Series",
+          "Sets, Relations and Functions",
+          "Statistics",
+          "Straight Lines and Pair of Lines",
+          "Three Dimensional Geometry",
+          "Trigonometric Functions and Equations",
+          "Vector Algebra"
+        ]
+      }
+    ]
+  },
+  "neet-ug": {
+    "name": "NEET UG",
+    "subjects": [
+      {
+        "name": "Biology",
+        "topics": [
+          "Diversity in Living World",
+          "Structural Organisation in Animals and Plants",
+          "Cell Structure and Function",
+          "Plant Physiology",
+          "Human Physiology",
+          "Reproduction",
+          "Genetics and Evolution",
+          "Biology and Human Welfare",
+          "Biotechnology and Its Applications",
+          "Ecology and Environment"
+        ]
+      },
+      {
+        "name": "Chemistry",
+        "topics": [
+          "Some Basic Concepts in Chemistry",
+          "Atomic Structure",
+          "Chemical Bonding and Molecular Structure",
+          "Chemical Thermodynamics",
+          "Solutions",
+          "Equilibrium",
+          "Redox Reactions and Electrochemistry",
+          "Chemical Kinetics",
+          "Classification of Elements and Periodicity",
+          "p-Block Elements",
+          "d- and f-Block Elements",
+          "Coordination Compounds",
+          "Purification and Characterisation of Organic Compounds",
+          "Some Basic Principles of Organic Chemistry",
+          "Hydrocarbons",
+          "Organic Compounds Containing Halogens",
+          "Organic Compounds Containing Oxygen",
+          "Organic Compounds Containing Nitrogen",
+          "Biomolecules",
+          "Principles Related to Practical Chemistry"
+        ]
+      },
+      {
+        "name": "Physics",
+        "topics": [
+          "Physics and Measurement",
+          "Kinematics",
+          "Laws of Motion",
+          "Work, Energy and Power",
+          "Rotational Motion",
+          "Gravitation",
+          "Properties of Solids and Liquids",
+          "Thermodynamics",
+          "Kinetic Theory of Gases",
+          "Oscillations and Waves",
+          "Electrostatics",
+          "Current Electricity",
+          "Magnetic Effects of Current and Magnetism",
+          "Electromagnetic Induction and Alternating Currents",
+          "Electromagnetic Waves",
+          "Optics",
+          "Dual Nature of Matter and Radiation",
+          "Atoms and Nuclei",
+          "Electronic Devices",
+          "Experimental Skills"
+        ]
+      }
+    ]
+  },
+  "upsc-civil-services": {
+    "name": "UPSC Civil Services",
+    "subjects": [
+      {
+        "name": "History",
+        "topics": [
+          "Ancient Indian History",
+          "Medieval Indian History",
+          "Modern Indian History",
+          "Indian National Movement",
+          "Post-Independence India",
+          "World History"
+        ]
+      },
+      {
+        "name": "Geography",
+        "topics": [
+          "Physical Geography",
+          "Indian Geography",
+          "World Geography",
+          "Human Geography",
+          "Economic Geography"
+        ]
+      },
+      {
+        "name": "Indian Polity & Governance",
+        "topics": [
+          "Indian Constitution",
+          "Fundamental Rights & Duties",
+          "Parliament",
+          "President & Vice President",
+          "Prime Minister & Council of Ministers",
+          "Supreme Court & High Courts",
+          "Centre-State Relations",
+          "Local Government",
+          "Constitutional Bodies",
+          "Governance & Social Justice"
+        ]
+      },
+      {
+        "name": "Economy",
+        "topics": [
+          "Basic Economics",
+          "Indian Economy",
+          "Banking & Monetary Policy",
+          "Fiscal Policy & Budget",
+          "Inflation & Unemployment",
+          "Economic Growth & Development",
+          "Agriculture",
+          "Infrastructure",
+          "International Trade"
+        ]
+      },
+      {
+        "name": "Environment & Ecology",
+        "topics": [
+          "Ecology & Ecosystems",
+          "Biodiversity",
+          "Climate Change",
+          "Environmental Pollution",
+          "Conservation",
+          "Environmental Laws & Conventions"
+        ]
+      },
+      {
+        "name": "Science & Technology",
+        "topics": [
+          "General Science",
+          "Space Technology",
+          "Defence Technology",
+          "Biotechnology",
+          "Information Technology",
+          "Artificial Intelligence & Robotics",
+          "Emerging Technologies"
+        ]
+      },
+      {
+        "name": "Art & Culture",
+        "topics": [
+          "Indian Architecture",
+          "Indian Paintings",
+          "Music & Dance",
+          "Literature",
+          "Religion & Philosophy",
+          "Indian Heritage"
+        ]
+      },
+      {
+        "name": "Current Affairs",
+        "topics": [
+          "National Issues",
+          "International Relations",
+          "Economy",
+          "Science & Technology",
+          "Environment",
+          "Government Schemes",
+          "Reports & Indices"
+        ]
+      },
+      {
+        "name": "CSAT",
+        "topics": [
+          "Reading Comprehension",
+          "Logical Reasoning",
+          "Analytical Ability",
+          "Basic Numeracy",
+          "Data Interpretation",
+          "Decision Making"
+        ]
+      },
+      {
+        "name": "Ethics, Integrity & Aptitude",
+        "topics": [
+          "Ethics & Human Interface",
+          "Attitude",
+          "Aptitude & Foundational Values",
+          "Emotional Intelligence",
+          "Public Service Values",
+          "Probity in Governance",
+          "Case Studies"
+        ]
+      },
+      {
+        "name": "Essay",
+        "topics": [
+          "Social Issues",
+          "Political Issues",
+          "Economic Issues",
+          "Science & Technology",
+          "Environment",
+          "Philosophical Essays"
+        ]
+      }
+    ]
+  },
+  "cuet-ug": {
+    "name": "CUET UG",
+    "subjects": [
+      {
+        "name": "General Aptitude Test",
+        "topics": [
+          "Logical and Analytical Reasoning",
+          "General Knowledge & Current Affairs",
+          "Numerical Ability"
+        ]
+      },
+      {
+        "name": "English",
+        "topics": [
+          "Reading Comprehension",
+          "Vocabulary",
+          "Verbal Ability"
+        ]
+      },
+      {
+        "name": "Physics",
+        "topics": [
+          "Electrostatics",
+          "Current Electricity",
+          "Magnetic Effects of Current and Magnetism",
+          "Electromagnetic Induction and Alternating Current",
+          "Electromagnetic Waves",
+          "Optics",
+          "Dual Nature of Matter and Radiation",
+          "Atoms and Nuclei",
+          "Electronic Devices"
+        ]
+      },
+      {
+        "name": "Chemistry",
+        "topics": [
+          "Solutions",
+          "Electrochemistry",
+          "Chemical Kinetics",
+          "d and f Block Elements",
+          "Coordination Compounds",
+          "Haloalkanes and Haloarenes",
+          "Alcohols, Phenols and Ethers",
+          "Aldehydes, Ketones and Carboxylic Acids",
+          "Amines",
+          "Biomolecules"
+        ]
+      },
+      {
+        "name": "Mathematics",
+        "topics": [
+          "Relations and Functions",
+          "Algebra",
+          "Calculus",
+          "Vectors and Three-Dimensional Geometry",
+          "Linear Programming",
+          "Probability"
+        ]
+      },
+      {
+        "name": "Biology",
+        "topics": [
+          "Reproduction",
+          "Genetics and Evolution",
+          "Biology and Human Welfare",
+          "Biotechnology and Its Applications",
+          "Ecology and Environment"
+        ]
+      }
+    ]
+  }
+}

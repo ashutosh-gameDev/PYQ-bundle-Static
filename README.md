@@ -1,76 +1,76 @@
-# PYQ Bundle – pre-launch landing page
+# PYQ Bundle – website (pyqbundle.com)
 
-Static one-page site: plain HTML/CSS/JS, no build step and no npm packages.
+Static marketing site on GitHub Pages. Plain HTML/CSS/JS, no build step needed to deploy.
+The student app lives separately at https://app.pyqbundle.com (Next.js on Vercel).
 
 ```
-index.html          page content & SEO tags
-site-data.json      ← numbers & settings you update
-css/styles.css      all styles (light + dark)
-js/main.js          stats loading, animations, form UI
-js/register.js      ← where form submissions are sent
-supabase-setup.sql  table + security for Supabase
-favicon.svg, robots.txt, sitemap.xml
+index.html              home page
+exams/                  exam pages (generated – don't edit by hand)
+privacy.html terms.html contact.html
+site-data.json          ← links, stats, screenshots, toggles
+css/styles.css          all styles (light + dark)
+js/main.js              config loading, animations, analytics, form UI
+js/register.js          where form sign-ups are sent (Google Sheets)
+google-apps-script.gs   Apps Script that writes sign-ups into the Sheet
+tools/                  exam page generator + link checker
+data/syllabus.json      subjects/topics pulled from the live API
+images/screenshots/     put real app screenshots here
 ```
 
-## Updating stats: `site-data.json`
+## Everyday settings: `site-data.json`
 
+| Key | What it does |
+|---|---|
+| `links.web_app` | Target of every "Practice Online" button. |
+| `links.play_store` | Leave `""` until the Play listing is live. When set to a `https://play.google.com/...` URL, the "Coming soon" Android button becomes "Download for Android", and the official Google Play badge, a QR code and the FAQ answer switch on automatically. |
+| `product.status` | Text in the hero badge. Update it when the Android app launches. |
+| `stats` | Stat cards. `exams` and `topics` are refreshed by `tools/build_pages.py`; `questions` and `papers` are set by hand. |
+| `screenshots` | Real app screenshots (see below). Empty = Preview section hidden. |
+| `features` | Optional: `{ "notes": "coming_soon" }` adds a "Coming soon" tag, `"hidden"` removes a card. Keys: `pyq, practice, notes, study_bite, performance, weak_areas, leaderboard, notifications`. |
+| `early_access.enabled` | `false` hides the Early Tester Program everywhere. |
+| `exams` | Options in the sign-up form's exam dropdown. |
+
+### Adding screenshots
+1. Save phone screenshots (portrait, at least 540 px wide, ideally `.webp`) in `images/screenshots/`.
+2. List them in `site-data.json`:
 ```json
-{ "key": "questions", "value": 2000, "suffix": "+", "label": "PYQs" }
+"screenshots": [
+  { "src": "images/screenshots/home.webp", "label": "Home", "caption": "Your study dashboard", "hero": true },
+  { "src": "images/screenshots/exam.webp", "label": "Exam selection" },
+  { "src": "images/screenshots/practice.webp", "label": "Practice" },
+  { "src": "images/screenshots/notes.webp", "label": "Notes" },
+  { "src": "images/screenshots/performance.webp", "label": "Performance" }
+]
 ```
+`"hero": true` replaces the phone mockup at the top of the page with that screenshot.
 
-- Change `2000` → `3500` and the page shows **3,500+ PYQs**.
-- Add another object to `stats` to add a new card, e.g.
-  `{ "key": "exams", "value": 3, "suffix": "+", "label": "Exams" }`
-- `key: "papers"` powers the "50+ papers today" line; keep that key.
-- `exams` fills the form dropdown. `early_access.enabled: false` hides the tester program.
-- JSON has no comments. Keep quotes and commas valid (check at jsonlint.com if unsure).
-  If the file fails to load, the page still works and shows "Continuously Growing".
+## Exam pages
+
+Content: `tools/exam_content.py` (overview, stages, pattern, tips).
+Subjects/topics: pulled from the live API.
+
+```
+python tools/sync_syllabus.py   # refresh data/syllabus.json from the API (public endpoints)
+python tools/build_pages.py     # rebuild exams/, home exam cards, footers, sitemap.xml, stats
+python tools/check_links.py     # verify every internal link
+```
+To add an exam: publish it in the app, add an entry to `tools/exam_content.py`, run the three commands.
+Bump `ASSET_V` in `tools/build_pages.py` after changing CSS/JS so browsers fetch the new files.
 
 ## Running locally
 
-`fetch()` does not work from `file://`, so serve the folder:
-
 ```
-python -m http.server 8080      # or:  npx serve .
+python -m http.server 8080
 ```
+Open http://localhost:8080. Analytics is disabled on localhost.
 
-Then open http://localhost:8080
+## Form sign-ups (Google Sheets)
 
-## Connecting the form
+`js/register.js` posts to the Apps Script web app set in `BACKEND.sheets.url`. Rows land in the
+"Registrations" tab of the Sheet. After editing `google-apps-script.gs` in Apps Script:
+Deploy → Manage deployments → ✏️ → New version → Deploy.
 
-Registrations go to a **Google Sheet** (`mode: 'sheets'` in `js/register.js`).
+## Analytics
 
-1. Create a Google Sheet (e.g. "PYQ Bundle Pre-Registrations").
-2. In the Sheet: Extensions → Apps Script. Delete the sample code and paste all of `google-apps-script.gs`. Save.
-3. Deploy → New deployment → ⚙️ Web app. Execute as: **Me**. Who has access: **Anyone**. Deploy, then allow access.
-4. Copy the Web app URL (ends in `/exec`) into `BACKEND.sheets.url` in `js/register.js`.
-5. Test: submit the form once. A "Registrations" tab appears with your row.
-
-After changing the Apps Script later: Deploy → Manage deployments → ✏️ → Version: New version → Deploy.
-
-Other modes are still available: `'local'` (saves nothing), `'supabase'` (see `supabase-setup.sql`), `'endpoint'`.
-
-## Before going live
-
-- Replace `https://pyqbundle.com/` with your real domain in `index.html`, `robots.txt`, `sitemap.xml`.
-- Add `og-image.png` (1200×630) to the root for link previews.
-- Screenshots: in `index.html` (Product Preview), swap a `<div class="phone">…</div>` for
-  `<img class="phone-img" src="images/practice.webp" alt="…" loading="lazy">`.
-  Only use screens that show public features.
-
-## Analytics (Google Analytics 4)
-
-Paste your Measurement ID into `GA_ID` at the top of `js/main.js`. It is disabled while empty
-and never loads on localhost.
-
-Events sent (no personal data):
-
-| Event | When | Params |
-|---|---|---|
-| `page_view` | automatic | – |
-| `cta_click` | a Pre-Register / Early Tester button is clicked | `cta` |
-| `pre_register` | registration saved | `early_tester`, `exam`, `duplicate` |
-| `form_error` | submission failed | `reason` |
-
-In GA: Admin → Events → mark `pre_register` as a **Key event**. To see the `exam` / `early_tester`
-breakdown in reports, add them under Admin → Custom definitions → Custom dimensions (event scope).
+Google Analytics 4 (`GA_ID` at the top of `js/main.js`). Events: `cta_click` (with `cta` name),
+`pre_register` (Early Tester / updates sign-up), `form_error`.

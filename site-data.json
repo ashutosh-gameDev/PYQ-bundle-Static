@@ -1,16 +1,59 @@
 {
   "product": {
     "name": "PYQ Bundle",
-    "status": "Coming Soon"
+    "status": "Now live on the web · Android app coming soon"
+  },
+  "links": {
+    "web_app": "https://app.pyqbundle.com",
+    "play_store": ""
   },
   "stats": [
-    { "key": "questions", "value": 2000, "suffix": "+", "label": "PYQs" },
-    { "key": "papers", "value": 50, "suffix": "+", "label": "Previous Year Papers" },
-    { "key": "subjects", "value": 5, "suffix": "+", "label": "Subjects" }
+    {
+      "key": "papers",
+      "value": 1000,
+      "suffix": "+",
+      "label": "PYQ Papers"
+    },
+    {
+      "key": "questions",
+      "value": 150000,
+      "suffix": "+",
+      "display": "1.5 Lakh+",
+      "label": "Questions"
+    },
+    {
+      "key": "notes",
+      "value": 50,
+      "suffix": "+",
+      "label": "Subject Notes"
+    },
+    {
+      "key": "exams",
+      "value": 8,
+      "suffix": "",
+      "label": "Exams"
+    },
+    {
+      "key": "topics",
+      "value": 378,
+      "suffix": "",
+      "label": "Topics to practise"
+    }
   ],
+  "screenshots": [],
   "early_access": {
     "enabled": true,
     "premium_reward": "1 Year Premium FREE"
   },
-  "exams": ["SSC GD", "SSC CGL", "JEE Main", "NEET", "GATE", "UPSC", "Railway", "Other"]
+  "exams": [
+    "SSC GD Constable",
+    "SSC CGL",
+    "RRB NTPC",
+    "RRB JE",
+    "JEE Main",
+    "NEET UG",
+    "UPSC Civil Services",
+    "CUET UG",
+    "Other"
+  ]
 }
