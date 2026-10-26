@@ -405,51 +405,7 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); font-weight: 800; }
 .qr-card p { margin-top: 10px; font-size: .82rem; font-weight: 600; color: #333; }
 .qr svg { display: block; width: 160px; height: 160px; }
 
-/* Early tester program */
-.ea-panel {
-  position: relative; isolation: isolate; overflow: hidden;
-  padding: 64px 56px;
-  color: #fff;
-  background: linear-gradient(140deg, #0b1633 0%, #10245a 55%, #1d4ed8 130%);
-  border-radius: 32px;
-}
-.ea-glow {
-  position: absolute; inset: 0; z-index: -1;
-  background:
-    radial-gradient(40% 50% at 85% 0%, rgba(96, 165, 250, .35), transparent 70%),
-    radial-gradient(35% 45% at 5% 100%, rgba(245, 158, 11, .18), transparent 70%);
-}
-.ea-head { max-width: 680px; margin: 0 auto; text-align: center; }
-.ea-head p:not(.eyebrow) { margin-top: 14px; font-size: 1.07rem; color: rgba(255, 255, 255, .8); }
-.eyebrow-amber { color: #fcd34d; }
-.reward {
-  display: flex; align-items: center; gap: 20px;
-  max-width: 660px; margin: 36px auto 0; padding: 22px 26px;
-  background: rgba(255, 255, 255, .07);
-  border: 1px solid rgba(252, 211, 77, .35); border-radius: 22px;
-}
-.reward-icon {
-  display: grid; place-items: center; flex: none; width: 60px; height: 60px;
-  font-size: 1.9rem; background: linear-gradient(135deg, #fcd34d, #f59e0b); border-radius: 16px;
-}
-.reward h3 { font-size: clamp(1.15rem, 2.4vw, 1.45rem); font-weight: 800; color: #fde68a; }
-.reward p { margin-top: 4px; color: rgba(255, 255, 255, .8); font-size: .95rem; }
-.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin: 44px 0 0; padding: 0; list-style: none; }
-.step { position: relative; padding: 22px 18px; background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .12); border-radius: 18px; }
-.step:not(:last-child)::after {
-  content: "→"; position: absolute; top: 50%; right: -15px; z-index: 1;
-  transform: translateY(-50%); font-weight: 700; color: rgba(255, 255, 255, .45);
-}
-.step-num { display: grid; place-items: center; width: 36px; height: 36px; margin-bottom: 14px; font-weight: 800; color: #10245a; background: #fff; border-radius: 50%; }
-.step:last-child { border-color: rgba(252, 211, 77, .45); background: rgba(252, 211, 77, .08); }
-.step:last-child .step-num { color: #1f1300; background: linear-gradient(135deg, #fcd34d, #f59e0b); }
-.step h3 { font-size: 1rem; font-weight: 700; }
-.step p { margin-top: 6px; font-size: .9rem; color: rgba(255, 255, 255, .72); }
-
-/* Registration form */
-.reg-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: start; margin-top: 56px; }
-.reg-copy { padding-top: 12px; }
-.reg-copy h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); }
+/* Forms */
 .checklist { margin: 28px 0 0; padding: 0; list-style: none; }
 .checklist li { display: flex; align-items: center; gap: 12px; padding: 7px 0; font-weight: 600; }
 .checklist svg {
@@ -638,6 +594,49 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--p
 .contact-item h2 { font-size: 1.05rem; }
 .contact-item p { margin-top: 4px; font-size: .92rem; color: var(--muted); }
 
+/* ---------- Careers ---------- */
+.section-tight-y { padding: 56px 0; }
+.hiring-band {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 36px 40px; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--success); border-radius: 24px;
+}
+.hiring-band h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+.hiring-band .section-sub { margin-top: 8px; }
+.careers-hero h1 { margin-top: 0; }
+.careers-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
+.job-card { padding: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; }
+.job-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.job-head h2 { margin-top: 10px; font-size: clamp(1.5rem, 3vw, 2rem); }
+.job-card h3 { margin: 28px 0 10px; font-size: 1.08rem; }
+.job-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+.job-tags li { padding: 6px 12px; font-size: .85rem; font-weight: 600; color: var(--muted); background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px; }
+.job-list { margin: 0; padding-left: 20px; color: var(--muted); }
+.job-list li { margin: 7px 0; }
+.hire-steps { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: hire; }
+.hire-steps li { counter-increment: hire; position: relative; display: flex; flex-direction: column; padding: 12px 14px 12px 52px; background: var(--bg-alt); border-radius: 12px; }
+.hire-steps li::before {
+  content: counter(hire); position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  display: grid; place-items: center; width: 26px; height: 26px; font-size: .85rem; font-weight: 800;
+  color: var(--primary); background: var(--primary-soft); border-radius: 50%;
+}
+.hire-steps span { font-size: .9rem; color: var(--muted); }
+.form-title { margin-bottom: 20px; font-size: 1.35rem; }
+#apply { position: sticky; top: 84px; }
+fieldset.field { margin: 0 0 18px; padding: 0; border: 0; min-width: 0; }
+fieldset.field legend { margin-bottom: 8px; padding: 0; font-size: .92rem; font-weight: 600; }
+.chip-checks { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip-checks label { cursor: pointer; }
+.chip-checks input { position: absolute; opacity: 0; pointer-events: none; }
+.chip-checks span {
+  display: inline-block; padding: 8px 14px; font-size: .9rem; font-weight: 600;
+  background: var(--bg); border: 1px solid var(--border-strong); border-radius: 999px;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.chip-checks input:checked + span { color: var(--primary); background: var(--primary-soft); border-color: var(--primary); }
+.chip-checks input:focus-visible + span { outline: 3px solid var(--ring); outline-offset: 2px; }
+.check a { color: var(--primary); }
+#e-consent { margin: -10px 0 16px; }
+
 /* ---------- 5. Animations ---------- */
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; transition-delay: calc(var(--d, 0) * 80ms); }
 .js .reveal.in { opacity: 1; transform: none; }
@@ -664,18 +663,13 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--p
   .feature.f-lg, .feature.f-wide { grid-column: span 1; }
   .how-steps { grid-template-columns: repeat(3, 1fr); }
   .how-steps li:not(:last-child)::after { display: none; }
-  .steps { grid-template-columns: 1fr; gap: 26px; max-width: 460px; margin-left: auto; margin-right: auto; }
-  .step { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; align-items: center; }
-  .step-num { grid-row: span 2; margin: 0; }
-  .step p { margin-top: 2px; }
-  .step:not(:last-child)::after { content: "↓"; top: auto; right: auto; bottom: -24px; left: 50%; transform: translateX(-50%); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 860px) {
   .section { padding: 72px 0; }
   .hero { padding: 56px 0 56px; }
-  .hero-grid, .reg-grid, .exam-grid, .download-panel { grid-template-columns: 1fr; gap: 40px; }
+  .hero-grid, .careers-grid, .exam-grid, .download-panel { grid-template-columns: 1fr; gap: 40px; }
   .hero-copy { text-align: center; }
   .hero-copy .lead { margin-left: auto; margin-right: auto; }
   .hero-copy .cta-left { justify-content: center; }
@@ -683,7 +677,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--p
   .exam-grid-cards { grid-template-columns: repeat(2, 1fr); }
   .download-panel { padding: 36px 26px; }
   .qr-card { justify-self: start; }
-  .ea-panel { padding: 52px 26px; border-radius: 26px; }
+  #apply { position: static; }
 }
 
 @media (max-width: 640px) {
@@ -702,12 +696,13 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--p
   .stat-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .row-2 { grid-template-columns: 1fr; gap: 0; }
   .form-card { padding: 22px 18px; border-radius: 20px; }
-  .ea-panel { padding: 40px 18px; }
-  .reward { flex-direction: column; text-align: center; padding: 22px 18px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .footer-brand { grid-column: 1 / -1; }
   .toc ol { columns: 1; }
   .contact-grid { grid-template-columns: 1fr; }
+  .job-card { padding: 22px 18px; }
+  .hiring-band { padding: 26px 20px; }
+  .hiring-band .btn { width: 100%; }
   .exam-cta-band { padding: 22px; }
   .exam-cta-band .btn { width: 100%; }
 }

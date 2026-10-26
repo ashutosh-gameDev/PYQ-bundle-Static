@@ -1,5 +1,5 @@
 /* =========================================================
-   PYQ Bundle – pre-registration backend adapter
+   PYQ Bundle – website form backend adapter (careers applications)
    ---------------------------------------------------------
    The page calls  submitPreRegistration(data)  and expects it to:
      • resolve { ok: true }                   → saved
@@ -21,7 +21,7 @@ const BACKEND = {
   mode: 'sheets',
 
   sheets: {
-    url: 'https://script.google.com/macros/s/AKfycbwbWLncVrOOvzmEk82AlKL2Bb9QpFfoRJluwT9gvI1LUaX6JZFACNOfm1dGeET_FWnZlQ/exec' // Apps Script Web app URL, e.g. 'https://script.google.com/macros/s/AKfy…/exec'
+    url: 'https://script.google.com/macros/s/AKfycbxRUllQPjvooh6DIBy5rNpLOkvzfKsUekJglyriqMUpbGMwArTIMkVpa61nw_1Xi6sgvQ/exec' // Apps Script Web app URL, e.g. 'https://script.google.com/macros/s/AKfy…/exec'
   },
 
   supabase: {
@@ -46,14 +46,17 @@ const BACKEND = {
 
   // Remembers emails already submitted from this browser, so a double-click
   // or a second visit doesn't create a duplicate row.
-  function seenEmails() {
-    try { return JSON.parse(localStorage.getItem(SEEN_KEY)) || []; } catch (e) { return []; }
+  // Separate memory per form, so an old sign-up never blocks a job application.
+  const keyFor = (data) => (data.type === 'career' ? 'pyqb-applied-v1' : SEEN_KEY);
+
+  function seenEmails(key) {
+    try { return JSON.parse(localStorage.getItem(key)) || []; } catch (e) { return []; }
   }
-  function rememberEmail(email) {
+  function rememberEmail(key, email) {
     try {
-      const list = seenEmails();
+      const list = seenEmails(key);
       if (!list.includes(email)) list.push(email);
-      localStorage.setItem(SEEN_KEY, JSON.stringify(list.slice(-20)));
+      localStorage.setItem(key, JSON.stringify(list.slice(-20)));
     } catch (e) { /* storage unavailable – ignore */ }
   }
 
@@ -140,13 +143,13 @@ const BACKEND = {
    *          early_tester:boolean,message:string|null,source:string}} data
    */
   window.submitPreRegistration = async function submitPreRegistration(data) {
-    if (seenEmails().includes(data.email)) return { ok: true, duplicate: true };
+    if (seenEmails(keyFor(data)).includes(data.email)) return { ok: true, duplicate: true };
 
     const send = senders[BACKEND.mode];
     if (!send) throw new Error(`Unknown BACKEND.mode "${BACKEND.mode}"`);
 
     const result = await send(data);
-    if (BACKEND.mode !== 'local') rememberEmail(data.email); // test mode saves nothing, so don't block a real submit later
+    if (BACKEND.mode !== 'local') rememberEmail(keyFor(data), data.email); // test mode saves nothing, so don't block a real submit later
     return result;
   };
 })();

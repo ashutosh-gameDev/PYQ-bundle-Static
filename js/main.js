@@ -29,6 +29,7 @@
   }
   // Single place to send events – swap the body to change provider.
   const track = (name, params) => { if (analyticsOn) gtag('event', name, params || {}); };
+  window.pyqbTrack = track; // used by js/careers.js
 
   document.addEventListener('click', (e) => {
     const el = e.target.closest('[data-cta]');
@@ -52,11 +53,6 @@
   const onScroll = () => nav && nav.classList.toggle('scrolled', window.scrollY > 8);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  /* ---------- "Join Early Access" pre-ticks the tester checkbox ---------- */
-  $$('[data-tester]').forEach((el) =>
-    el.addEventListener('click', () => { const cb = $('#f-tester'); if (cb) cb.checked = true; })
-  );
 
   /* ---------- Reveal on scroll ---------- */
   const reveals = $$('.reveal');
@@ -115,15 +111,6 @@
     const byKey = {};
     stats.forEach((s) => { if (s.key) byKey[s.key] = s; });
     $$('[data-stat]').forEach((el) => { const s = byKey[el.dataset.stat]; if (s) el.textContent = statText(s); });
-  }
-
-  function renderExams(exams) {
-    const select = $('#f-exam');
-    if (!select) return;
-    const list = exams.map(String).filter(Boolean);
-    if (!list.includes('Other')) list.push('Other');
-    $$('option', select).slice(1).forEach((o) => o.remove()); // keep placeholder
-    list.forEach((name) => select.add(new Option(name, name)));
   }
 
   /* ---------- Links: web app + Google Play ---------- */
@@ -242,139 +229,7 @@
     applyLinks(data.links || {});
     if (Array.isArray(data.screenshots)) renderScreenshots(data.screenshots);
     if (data.features && typeof data.features === 'object') applyFeatures(data.features);
-
-    const ea = data.early_access || {};
-    if (ea.premium_reward) setText('[data-reward]', ea.premium_reward);
-    if (ea.enabled === false) $$('[data-ea]').forEach((el) => { el.hidden = true; });
-
-    if (Array.isArray(data.exams) && data.exams.length) renderExams(data.exams);
   }
 
   loadSiteData().then(applySiteData);
-
-  /* =========================================================
-     Pre-registration form
-     ========================================================= */
-  const form = $('#register-form');
-  if (!form) return;
-  const submitLabel = $('.btn-text', $('#submit-btn')).textContent;
-
-  const f = {
-    name: $('#f-name'),
-    email: $('#f-email'),
-    phone: $('#f-phone'),
-    exam: $('#f-exam'),
-    examOther: $('#f-exam-other'),
-    tester: $('#f-tester'),
-    message: $('#f-message'),
-    company: $('#f-company')
-  };
-  const alertBox = $('#form-alert');
-  const submitBtn = $('#submit-btn');
-  const successEl = $('#register-success');
-  const otherField = $('#exam-other-field');
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  let busy = false;
-
-  f.exam.addEventListener('change', () => { otherField.hidden = f.exam.value !== 'Other'; });
-
-  const cleanPhone = (v) => v.replace(/[\s\-()]/g, '');
-
-  function validate() {
-    const errors = {};
-    const name = f.name.value.trim();
-    const email = f.email.value.trim();
-    const phone = cleanPhone(f.phone.value.trim());
-
-    if (name.length < 2) errors.name = 'Please enter your name.';
-    if (!email) errors.email = 'Please enter your email.';
-    else if (!EMAIL_RE.test(email)) errors.email = 'Please enter a valid email address.';
-    if (phone && !/^\+?\d{10,13}$/.test(phone)) errors.phone = 'Please enter a valid phone number, or leave it empty.';
-    if (!f.exam.value) errors.exam = 'Please choose the exam you are preparing for.';
-    return errors;
-  }
-
-  function setError(field, msg) {
-    const input = f[field];
-    const err = $('#e-' + field);
-    if (!input || !err) return;
-    err.textContent = msg || '';
-    if (msg) input.setAttribute('aria-invalid', 'true');
-    else input.removeAttribute('aria-invalid');
-  }
-
-  ['name', 'email', 'phone', 'exam'].forEach((key) => {
-    const clear = () => { if (f[key].getAttribute('aria-invalid')) setError(key, ''); };
-    f[key].addEventListener('input', clear);
-    f[key].addEventListener('change', clear);
-  });
-
-  let slowTimer;
-  function setLoading(on) {
-    busy = on;
-    submitBtn.disabled = on;
-    submitBtn.classList.toggle('is-loading', on);
-    const label = $('.btn-text', submitBtn);
-    label.textContent = on ? 'Saving…' : submitLabel;
-    clearTimeout(slowTimer);
-    if (on) slowTimer = setTimeout(() => { label.textContent = 'Still saving, please wait…'; }, 5000);
-  }
-
-  function showAlert(msg) {
-    alertBox.textContent = msg;
-    alertBox.hidden = !msg;
-  }
-
-  function showSuccess(isTester, duplicate) {
-    form.hidden = true;
-    $('#success-tester').hidden = !isTester;
-    const updates = $('#success-updates');
-    if (updates) updates.hidden = isTester;
-    $('#success-duplicate').hidden = !duplicate;
-    successEl.hidden = false;
-    successEl.focus({ preventScroll: true });
-    successEl.closest('.form-card').scrollIntoView({ block: 'center', behavior: 'smooth' });
-  }
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (busy) return;
-    showAlert('');
-
-    // Bots fill the hidden field – pretend it worked and send nothing.
-    if (f.company.value) { showSuccess(false, false); return; }
-
-    const errors = validate();
-    ['name', 'email', 'phone', 'exam'].forEach((k) => setError(k, errors[k]));
-    const firstInvalid = ['name', 'email', 'phone', 'exam'].find((k) => errors[k]);
-    if (firstInvalid) { f[firstInvalid].focus(); return; }
-
-    const examOther = f.examOther.value.trim();
-    const data = {
-      name: f.name.value.trim(),
-      email: f.email.value.trim().toLowerCase(),
-      phone: cleanPhone(f.phone.value.trim()) || null,
-      exam: f.exam.value === 'Other' && examOther ? 'Other: ' + examOther : f.exam.value,
-      early_tester: !!(f.tester && f.tester.checked),
-      message: f.message.value.trim() || null,
-      source: 'website'
-    };
-
-    setLoading(true);
-    try {
-      const result = await window.submitPreRegistration(data);
-      const duplicate = !!(result && result.duplicate);
-      // No name/email/phone is ever sent to analytics.
-      track('pre_register', { early_tester: data.early_tester, exam: f.exam.value, duplicate });
-      showSuccess(data.early_tester, duplicate);
-    } catch (err) {
-      track('form_error', { reason: 'submit_failed' });
-      console.error('[PYQ Bundle] Pre-registration failed:', err);
-      showAlert(err && err.name === 'AbortError'
-        ? 'This is taking longer than usual. Please try again. If your details were already saved, we’ll recognise your email.'
-        : 'Something went wrong and we couldn’t save your registration. Please check your connection and try again.');
-    } finally {
-      setLoading(false);
-    }
-  });
 })();

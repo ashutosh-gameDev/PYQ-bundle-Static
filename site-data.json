@@ -40,20 +40,5 @@
       "label": "Topics to practise"
     }
   ],
-  "screenshots": [],
-  "early_access": {
-    "enabled": true,
-    "premium_reward": "1 Year Premium FREE"
-  },
-  "exams": [
-    "SSC GD Constable",
-    "SSC CGL",
-    "RRB NTPC",
-    "RRB JE",
-    "JEE Main",
-    "NEET UG",
-    "UPSC Civil Services",
-    "CUET UG",
-    "Other"
-  ]
+  "screenshots": []
 }

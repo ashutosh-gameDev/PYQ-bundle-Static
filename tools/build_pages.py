@@ -131,13 +131,13 @@ def footer(prefix):
           <li><a href="{home}#features">Features</a></li>
           <li><a href="{home}#how">How it works</a></li>
           <li><a href="{home}#download">Download</a></li>
-          <li data-ea><a href="{home}#early-access">Early Tester Program</a></li>
           <li><a href="{home}#faq">FAQ</a></li>
         </ul>
       </nav>
       <nav aria-label="Company">
         <h2 class="footer-h">Company</h2>
         <ul class="footer-list">
+          <li><a href="{prefix}careers.html">Careers</a></li>
           <li><a href="{prefix}contact.html">Contact</a></li>
           <li><a href="{prefix}privacy.html">Privacy Policy</a></li>
           <li><a href="{prefix}terms.html">Terms of Service</a></li>
@@ -422,7 +422,7 @@ def main():
     (ROOT / "exams" / "index.html").write_text(exams_index(), encoding="utf-8")
 
     # Root-level pages: exam cards + footer
-    for name in ("index.html", "privacy.html", "terms.html", "contact.html"):
+    for name in ("index.html", "careers.html", "privacy.html", "terms.html", "contact.html"):
         f = ROOT / name
         if not f.exists():
             continue
@@ -434,7 +434,7 @@ def main():
         f.write_text(t, encoding="utf-8")
 
     # Sitemap
-    pages = ["", "exams/"] + [f"exams/{x['slug']}/" for x in exams] + ["contact.html", "privacy.html", "terms.html"]
+    pages = ["", "exams/"] + [f"exams/{x['slug']}/" for x in exams] + ["careers.html", "contact.html", "privacy.html", "terms.html"]
     pri = {"": "1.0", "exams/": "0.8"}
     urls = "\n".join(
         f"  <url>\n    <loc>{SITE}/{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <priority>{pri.get(u, '0.7' if u.startswith('exams/') else '0.3')}</priority>\n  </url>"

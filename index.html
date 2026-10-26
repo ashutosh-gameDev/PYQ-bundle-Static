@@ -38,7 +38,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap">
   <link rel="stylesheet" href="css/styles.css?v=8">
-  <script src="js/register.js?v=8" defer></script>
   <script src="js/main.js?v=8" defer></script>
 
   <script type="application/ld+json">
@@ -51,7 +50,7 @@
         "name": "PYQ Bundle",
         "url": "https://pyqbundle.com/",
         "logo": "https://pyqbundle.com/og-image.png",
-        "email": "support@pyqbundle.com"
+        "email": "pyqbundle@gmail.com"
       },
       {
         "@type": "WebSite",
@@ -313,123 +312,16 @@
       </div>
     </section>
 
-    <!-- ============ EARLY TESTER PROGRAM (toggle with early_access.enabled) ============ -->
-    <section class="section section-alt" id="early-access" aria-labelledby="ea-title" data-ea>
+    <!-- ============ CAREERS BAND ============ -->
+    <section class="section section-alt section-tight-y" aria-labelledby="hiring-title">
       <div class="container">
-        <div class="ea-panel">
-          <div class="ea-glow" aria-hidden="true"></div>
-          <div class="ea-head reveal">
-            <p class="eyebrow eyebrow-amber">Early Tester Program</p>
-            <h2 id="ea-title">Help Us Improve PYQ Bundle</h2>
-            <p>PYQ Bundle is live, and we improve it every week. Join the tester program to try updates early, report bugs and tell us what to build next.</p>
+        <div class="hiring-band reveal">
+          <div>
+            <p class="eyebrow">Careers</p>
+            <h2 id="hiring-title">We're hiring data entry freelancers</h2>
+            <p class="section-sub">Work remotely, choose your hours, and help lakhs of students practise real exam questions.</p>
           </div>
-
-          <div class="reward reveal" style="--d:1">
-            <div class="reward-icon" aria-hidden="true">🎁</div>
-            <div>
-              <h3>1 Year of PYQ Bundle Premium — FREE</h3>
-              <p>Active early testers who complete the testing requirements will receive 1 Year Premium FREE.</p>
-            </div>
-          </div>
-
-          <ol class="steps">
-            <li class="step reveal"><span class="step-num">1</span><h3>Sign up below</h3><p>Join the tester list.</p></li>
-            <li class="step reveal" style="--d:1"><span class="step-num">2</span><h3>Get tester access</h3><p>We'll email you when your spot opens.</p></li>
-            <li class="step reveal" style="--d:2"><span class="step-num">3</span><h3>Use PYQ Bundle</h3><p>Practise PYQs and use the app normally.</p></li>
-            <li class="step reveal" style="--d:3"><span class="step-num">4</span><h3>Share feedback</h3><p>Report bugs, confusing screens and ideas.</p></li>
-            <li class="step reveal" style="--d:4"><span class="step-num">5</span><h3>Get rewarded</h3><p>Eligible active testers receive 1 year of Premium free.</p></li>
-          </ol>
-        </div>
-
-        <div class="reg-grid" id="register">
-          <div class="reg-copy reveal">
-            <h2 id="register-title">Join the Early Tester Program</h2>
-            <p class="section-sub">Tell us a little about your preparation. It takes under a minute.</p>
-            <ul class="checklist">
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free to join</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Try new updates before everyone else</li>
-              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Your feedback shapes what we build</li>
-            </ul>
-          </div>
-
-          <div class="form-card reveal" style="--d:1">
-            <form id="register-form" novalidate>
-              <div class="field">
-                <label for="f-name">Name</label>
-                <input id="f-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="e-name">
-                <p class="field-error" id="e-name"></p>
-              </div>
-              <div class="row-2">
-                <div class="field">
-                  <label for="f-email">Email</label>
-                  <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="e-email">
-                  <p class="field-error" id="e-email"></p>
-                </div>
-                <div class="field">
-                  <label for="f-phone">Phone number <span class="opt">(optional)</span></label>
-                  <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" aria-describedby="e-phone">
-                  <p class="field-error" id="e-phone"></p>
-                </div>
-              </div>
-              <div class="field">
-                <label for="f-exam">Exam you're preparing for</label>
-                <select id="f-exam" name="exam" required aria-describedby="e-exam">
-                  <option value="">Select your exam</option>
-                  <option>SSC GD Constable</option>
-                  <option>SSC CGL</option>
-                  <option>RRB NTPC</option>
-                  <option>RRB JE</option>
-                  <option>JEE Main</option>
-                  <option>NEET UG</option>
-                  <option>UPSC Civil Services</option>
-                  <option>CUET UG</option>
-                  <option>Other</option>
-                </select>
-                <p class="field-error" id="e-exam"></p>
-              </div>
-              <div class="field" id="exam-other-field" hidden>
-                <label for="f-exam-other">Which exam? <span class="opt">(optional)</span></label>
-                <input id="f-exam-other" name="exam_other" type="text" maxlength="60">
-              </div>
-
-              <label class="check">
-                <input id="f-tester" name="early_tester" type="checkbox" checked>
-                <span>
-                  <strong>I want to join the Early Tester Program.</strong>
-                  <small>Active early testers who complete the testing requirements will receive <span data-reward>1 Year Premium FREE</span>. Untick to just get PYQ Bundle updates.</small>
-                </span>
-              </label>
-
-              <div class="field">
-                <label for="f-message">What would you like PYQ Bundle to help you with? <span class="opt">(optional)</span></label>
-                <textarea id="f-message" name="message" rows="3" maxlength="1000"></textarea>
-              </div>
-
-              <!-- Honeypot: real users never see or fill this -->
-              <div class="hp" aria-hidden="true">
-                <label for="f-company">Company</label>
-                <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off">
-              </div>
-
-              <div class="form-alert" id="form-alert" role="alert" hidden></div>
-
-              <button class="btn btn-primary btn-lg btn-block" type="submit" id="submit-btn">
-                <span class="spinner" aria-hidden="true"></span>
-                <span class="btn-text">Join the Program</span>
-              </button>
-              <p class="form-note">No spam. We'll only use your details to contact you about PYQ Bundle. See our <a href="privacy.html">Privacy Policy</a>.</p>
-            </form>
-
-            <div class="success" id="register-success" tabindex="-1" hidden>
-              <div class="success-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
-              <h3>You're on the list! 🎉</h3>
-              <p>Thanks for joining PYQ Bundle.</p>
-              <p class="success-tester" id="success-tester" hidden>You've joined the Early Tester Program. We'll email you when your tester access is ready.</p>
-              <p id="success-updates">We'll keep you posted about PYQ Bundle updates.</p>
-              <p class="success-note" id="success-duplicate" hidden>This email was already registered, so there's no need to sign up again.</p>
-              <a class="btn btn-ghost" href="https://app.pyqbundle.com" data-link="web_app" data-cta="success_practice_online">Start practising now</a>
-            </div>
-          </div>
+          <a class="btn btn-primary btn-lg" href="careers.html" data-cta="home_careers">View role &amp; apply</a>
         </div>
       </div>
     </section>
@@ -459,13 +351,9 @@
             <summary><h3>Do I need an account?</h3><span class="plus" aria-hidden="true"></span></summary>
             <p>Yes. A free account saves your practice history, stats and progress. You can sign up with Google or with your email address.</p>
           </details>
-          <details data-ea>
-            <summary><h3>How do I get 1 Year Premium free?</h3><span class="plus" aria-hidden="true"></span></summary>
-            <p>Join the <a href="#early-access">Early Tester Program</a>. Active early testers who complete the testing requirements and provide useful feedback will receive one year of PYQ Bundle Premium free.</p>
-          </details>
           <details>
             <summary><h3>How do I contact you?</h3><span class="plus" aria-hidden="true"></span></summary>
-            <p>Email <a href="mailto:support@pyqbundle.com">support@pyqbundle.com</a> or visit our <a href="contact.html">contact page</a>.</p>
+            <p>Email <a href="mailto:pyqbundle@gmail.com">pyqbundle@gmail.com</a> or visit our <a href="contact.html">contact page</a>.</p>
           </details>
         </div>
       </div>
@@ -499,13 +387,13 @@
           <li><a href="./#features">Features</a></li>
           <li><a href="./#how">How it works</a></li>
           <li><a href="./#download">Download</a></li>
-          <li data-ea><a href="./#early-access">Early Tester Program</a></li>
           <li><a href="./#faq">FAQ</a></li>
         </ul>
       </nav>
       <nav aria-label="Company">
         <h2 class="footer-h">Company</h2>
         <ul class="footer-list">
+          <li><a href="careers.html">Careers</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>

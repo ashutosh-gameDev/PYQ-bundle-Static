@@ -6,12 +6,13 @@ The student app lives separately at https://app.pyqbundle.com (Next.js on Vercel
 ```
 index.html              home page
 exams/                  exam pages (generated – don't edit by hand)
-privacy.html terms.html contact.html
+careers.html privacy.html terms.html contact.html
 site-data.json          ← links, stats, screenshots, toggles
 css/styles.css          all styles (light + dark)
 js/main.js              config loading, animations, analytics, form UI
-js/register.js          where form sign-ups are sent (Google Sheets)
-google-apps-script.gs   Apps Script that writes sign-ups into the Sheet
+js/register.js          where form submissions are sent (Google Sheets)
+js/careers.js           careers application form
+google-apps-script.gs   Apps Script that writes form rows into the Sheet
 tools/                  exam page generator + link checker
 data/syllabus.json      subjects/topics pulled from the live API
 images/screenshots/     put real app screenshots here
@@ -27,8 +28,6 @@ images/screenshots/     put real app screenshots here
 | `stats` | Stat cards. `exams` and `topics` are refreshed by `tools/build_pages.py`; `questions` and `papers` are set by hand. |
 | `screenshots` | Real app screenshots (see below). Empty = Preview section hidden. |
 | `features` | Optional: `{ "notes": "coming_soon" }` adds a "Coming soon" tag, `"hidden"` removes a card. Keys: `pyq, practice, notes, study_bite, performance, weak_areas, leaderboard, notifications`. |
-| `early_access.enabled` | `false` hides the Early Tester Program everywhere. |
-| `exams` | Options in the sign-up form's exam dropdown. |
 
 ### Adding screenshots
 1. Save phone screenshots (portrait, at least 540 px wide, ideally `.webp`) in `images/screenshots/`.
@@ -64,13 +63,15 @@ python -m http.server 8080
 ```
 Open http://localhost:8080. Analytics is disabled on localhost.
 
-## Form sign-ups (Google Sheets)
+## Careers applications (Google Sheets)
 
-`js/register.js` posts to the Apps Script web app set in `BACKEND.sheets.url`. Rows land in the
-"Registrations" tab of the Sheet. After editing `google-apps-script.gs` in Apps Script:
+`careers.html` → `js/careers.js` → `js/register.js` posts to the Apps Script web app set in
+`BACKEND.sheets.url`. Applications land in the **Careers** tab (one per email). Older
+pre-registrations stay in the **Registrations** tab. After editing `google-apps-script.gs` in Apps Script:
 Deploy → Manage deployments → ✏️ → New version → Deploy.
 
 ## Analytics
 
 Google Analytics 4 (`GA_ID` at the top of `js/main.js`). Events: `cta_click` (with `cta` name),
-`pre_register` (Early Tester / updates sign-up), `form_error`.
+`career_apply` (careers application), `form_error`.
+Contact email used across the site: pyqbundle@gmail.com.
