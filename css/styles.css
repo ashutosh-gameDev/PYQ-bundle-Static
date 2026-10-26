@@ -620,6 +620,9 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--p
   color: var(--primary); background: var(--primary-soft); border-radius: 50%;
 }
 .hire-steps span { font-size: .9rem; color: var(--muted); }
+.job-intro { margin-top: 22px; padding: 14px 16px; color: var(--muted); background: var(--success-soft); border-radius: 12px; }
+.job-intro strong { color: var(--text); }
+.work-steps li::before { color: #fff; background: var(--btn-bg); }
 .form-title { margin-bottom: 20px; font-size: 1.35rem; }
 #apply { position: sticky; top: 84px; }
 fieldset.field { margin: 0 0 18px; padding: 0; border: 0; min-width: 0; }

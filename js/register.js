@@ -40,7 +40,7 @@ const BACKEND = {
 (function () {
   'use strict';
 
-  console.info('[PYQ Bundle] register.js v5 – sending registrations to:', BACKEND.mode);
+  console.info('[PYQ Bundle] register.js v9 – sending to:', BACKEND.mode, BACKEND.mode === 'sheets' ? '…' + BACKEND.sheets.url.slice(-14, -5) : '');
 
   const SEEN_KEY = 'pyqb-registered-v2'; // bump to forget emails remembered by older versions
 

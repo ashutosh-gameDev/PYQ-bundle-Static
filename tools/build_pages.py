@@ -23,7 +23,7 @@ from exam_content import EXAMS  # noqa: E402
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://pyqbundle.com"
 WEB_APP = "https://app.pyqbundle.com"  # overridden at runtime by site-data.json links.web_app
-ASSET_V = "8"  # bump to bust browser caches after CSS/JS changes
+ASSET_V = "9"  # bump to bust browser caches after CSS/JS changes
 TODAY = datetime.date.today().isoformat()
 
 e = html.escape

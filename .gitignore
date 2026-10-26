@@ -10,3 +10,6 @@ desktop.ini
 _*.html
 *.log
 node_modules/
+
+# Python
+__pycache__/

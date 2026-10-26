@@ -39,7 +39,7 @@
     if (!phone) errors.phone = 'Please enter your phone or WhatsApp number.';
     else if (!/^\+?\d{10,13}$/.test(phone)) errors.phone = 'Please enter a valid phone number.';
     if (f.city.value.trim().length < 2) errors.city = 'Please enter your city and state.';
-    if (!checked('languages').length) errors.languages = 'Choose at least one language.';
+    if (!checked('languages').length) errors.languages = 'Choose at least one language you can read.';
     if (!f.hours.value) errors.hours = 'Please choose your weekly availability.';
     const link = f.link.value.trim();
     if (link && !/^(https?:\/\/)?[^\s.]+\.[^\s]{2,}$/i.test(link)) errors.link = 'Please enter a valid link, or leave it empty.';
